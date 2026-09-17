@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Enquiry | Glow &amp; Go Beauty Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">Glow &amp; Go <span>Studio</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle Menu">&#9776;</button>
+      <nav class="primary-nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="enquiry.html" class="nav-link active">Enquiry</a></li>
+          <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Form Content -->
+  <main class="container" style="max-width: 800px;">
+    <section>
+      <h1>Book an Appointment</h1>
+      <p>Ready to glow? Fill out your details and chosen service below, and we will confirm availability.</p>
+
+      <form action="#" method="post" class="form-card" style="margin-top: 1.5rem;">
+        <div class="form-group">
+          <label for="fullName">Full Name *</label>
+          <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required placeholder="Enter your email address">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+        </div>
+
+        <div class="form-group">
+          <label for="service">Select Service *</label>
+          <select id="service" name="service" required>
+            <option value="" disabled selected>-- Select a service --</option>
+            <option value="facial">Hydrating Skincare Facial (R 450.00)</option>
+            <option value="manicure">Deluxe Gel Manicure (R 320.00)</option>
+            <option value="makeup">Special Occasion Makeup (R 550.00)</option>
+            <option value="hair">Hair Wash &amp; Styling (R 400.00)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="preferredDate">Preferred Date &amp; Time *</label>
+          <input type="datetime-local" id="preferredDate" name="preferredDate" required>
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Additional Information</label>
+          <textarea id="notes" name="notes" rows="4" placeholder="Tell us anything we should know about your request..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%; font-size: 1.1rem;">Send Request</button>
+      </form>
+    </section>
+  </main>
+
+  <footer style="background-color: #2C2C2C; color: #FFFFFF; text-align: center; padding: 2rem 0; margin-top: 4rem;">
+    <p>&copy; 2026 Glow &amp; Go Beauty Studio. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const primaryNav = document.querySelector('.primary-nav');
+    navToggle.addEventListener('click', () => {
+      const isVisible = primaryNav.getAttribute('data-visible') === 'true';
+      primaryNav.setAttribute('data-visible', !isVisible);
+      navToggle.setAttribute('aria-expanded', !isVisible);
+    });
+  </script>
+</body>
+</html>
