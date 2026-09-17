@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Glow &amp; Go Beauty Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">Glow &amp; Go <span>Studio</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle Menu">&#9776;</button>
+      <nav class="primary-nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="services.html" class="nav-link active">Services</a></li>
+          <li><a href="enquiry.html" class="nav-link">Enquiry</a></li>
+          <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Services Cards Section -->
+  <main class="container">
+    <section>
+      <h1>Our Beauty Treatments</h1>
+      <p>Explore our wide range of professional beauty services designed to give you lasting results.</p>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <img src="images/skincare.jpeg" alt="Hydrating Facial">
+          <div class="service-card-body">
+            <h3>Hydrating Skincare Facial</h3>
+            <p class="service-price">R 450.00 (60 mins)</p>
+            <p>Deep cleansing facial using organic botanical serums to restore natural skin vitality.</p>
+            <a href="enquiry.html" class="btn-primary" style="margin-top:auto;">Book Treatment</a>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="images/nails.jpeg" alt="Gel Manicure">
+          <div class="service-card-body">
+            <h3>Deluxe Gel Manicure</h3>
+            <p class="service-price">R 320.00 (45 mins)</p>
+            <p>Precise nail shaping, cuticle treatment, and long-lasting gel application in custom colors.</p>
+            <a href="enquiry.html" class="btn-primary" style="margin-top:auto;">Book Treatment</a>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="images/makeup.jpeg" alt="Special Occasion Makeup">
+          <div class="service-card-body">
+            <h3>Occasion Makeup</h3>
+            <p class="service-price">R 550.00 (60 mins)</p>
+            <p>Professional glam makeup tailored for weddings, matric dances, and special events.</p>
+            <a href="enquiry.html" class="btn-primary" style="margin-top:auto;">Book Treatment</a>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="images/hair.jpeg" alt="Hair care and styling">
+          <div class="service-card-body">
+            <h3>Hair Wash &amp; Styling</h3>
+            <p class="service-price">R 400.00 (45 mins)</p>
+            <p>Nourishing wash, deep conditioning mask, and custom blow-dry finishing.</p>
+            <a href="enquiry.html" class="btn-primary" style="margin-top:auto;">Book Treatment</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background-color: #2C2C2C; color: #FFFFFF; text-align: center; padding: 2rem 0; margin-top: 4rem;">
+    <p>&copy; 2026 Glow &amp; Go Beauty Studio. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const primaryNav = document.querySelector('.primary-nav');
+    navToggle.addEventListener('click', () => {
+      const isVisible = primaryNav.getAttribute('data-visible') === 'true';
+      primaryNav.setAttribute('data-visible', !isVisible);
+      navToggle.setAttribute('aria-expanded', !isVisible);
+    });
+  </script>
+</body>
+</html>
