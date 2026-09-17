@@ -1,0 +1,309 @@
+/* ==========================================================================
+   GLOW & GO BEAUTY STUDIO - MASTER STYLESHEET
+   Author: Masa Seadimo Matshedisho (ST10518632)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS RESET & GLOBAL BASE STYLES
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%; /* 16px Base */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Open Sans', Arial, sans-serif; /* Proposal Font Specification */
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #2C2C2C; /* Charcoal Primary Text */
+  background-color: #FAF7F2; /* Cream Background */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Accessible Focus States (WCAG Requirement) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #D4AF37;
+  outline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   2. DESIGN SYSTEM & CSS VARIABLES
+   -------------------------------------------------------------------------- */
+:root {
+  /* Brand Palette from Proposal */
+  --color-blush-pink: #F4C2C2;
+  --color-blush-hover: #E8B0B0;
+  --color-cream: #FAF7F2;
+  --color-white: #FFFFFF;
+  --color-charcoal: #2C2C2C;
+  --color-accent-gold: #D4AF37;
+  --color-muted-gray: #666666;
+
+  /* Typography Scale */
+  --ff-heading: 'Poppins', sans-serif;
+  --ff-body: 'Open Sans', Arial, sans-serif;
+
+  /* Spacing Scale */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+
+  /* Layout Shadow & Radius */
+  --card-radius: 8px;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4 {
+  font-family: var(--ff-heading);
+  color: var(--color-charcoal);
+  line-height: 1.25;
+  margin-bottom: var(--spacing-xs);
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.35rem; }
+
+p {
+  margin-bottom: var(--spacing-sm);
+}
+
+/* --------------------------------------------------------------------------
+   3. REUSABLE COMPONENTS & UTILITIES
+   -------------------------------------------------------------------------- */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-block: var(--spacing-md);
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-blush-pink);
+  color: var(--color-charcoal);
+  font-family: var(--ff-heading);
+  font-weight: 600;
+  border: 2px solid transparent;
+  border-radius: var(--card-radius);
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--color-blush-hover);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   4. HEADER & NAVIGATION LAYOUT
+   -------------------------------------------------------------------------- */
+.site-header {
+  background-color: var(--color-blush-pink);
+  box-shadow: var(--card-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid var(--color-accent-gold);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: var(--spacing-sm);
+}
+
+.brand-logo {
+  font-family: var(--ff-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-charcoal);
+}
+
+.brand-logo span {
+  color: var(--color-accent-gold);
+}
+
+.nav-toggle {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color-charcoal);
+}
+
+.primary-nav {
+  display: none; /* Hidden by default on mobile */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-white);
+  padding: var(--spacing-sm);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.primary-nav[data-visible="true"] {
+  display: block;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.nav-link {
+  font-weight: 600;
+  padding-block: 0.25rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-accent-gold);
+  border-bottom: 2px solid var(--color-accent-gold);
+}
+
+/* --------------------------------------------------------------------------
+   5. SERVICES & CONTENT CARDS (GRID LAYOUT)
+   -------------------------------------------------------------------------- */
+.services-grid,
+.grid-2-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.service-card {
+  background-color: var(--color-white);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.service-card-body {
+  padding: var(--spacing-sm);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.service-price {
+  font-family: var(--ff-heading);
+  font-weight: 700;
+  color: var(--color-accent-gold);
+  margin-bottom: var(--spacing-xs);
+}
+
+/* --------------------------------------------------------------------------
+   6. FORM STYLING
+   -------------------------------------------------------------------------- */
+.form-card {
+  background-color: var(--color-white);
+  padding: var(--spacing-md);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+}
+
+.form-group {
+  margin-bottom: var(--spacing-sm);
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #CCCCCC;
+  border-radius: var(--card-radius);
+  font-family: var(--ff-body);
+}
+
+/* --------------------------------------------------------------------------
+   7. MEDIA QUERIES (TABLET & DESKTOP)
+   -------------------------------------------------------------------------- */
+@media (min-width: 48em) {
+  h1 { font-size: 2.75rem; }
+  h2 { font-size: 2rem; }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .primary-nav {
+    display: flex !important;
+    position: static;
+    width: auto;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    gap: var(--spacing-md);
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-2-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64em) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
