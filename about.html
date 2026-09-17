@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Glow &amp; Go Beauty Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">Glow &amp; Go <span>Studio</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle Menu">&#9776;</button>
+      <nav class="primary-nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link active">About Us</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="enquiry.html" class="nav-link">Enquiry</a></li>
+          <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <section>
+      <h1>About Glow &amp; Go Beauty Studio</h1>
+      <p style="font-size: 1.1rem; color: var(--color-muted-gray);">Dedicated to helping our clients look and feel their best through professional and affordable self-care treatments.</p>
+    </section>
+
+    <div class="grid-2-col" style="margin-top: 2rem;">
+      <div class="form-card">
+        <h2>Our Story</h2>
+        <p>Founded in Pretoria in 2023, Glow &amp; Go Beauty Studio was established by a qualified beauty therapist to deliver personal care services in a warm, welcoming environment.</p>
+        <p>We aim to take the stress out of routine beauty care by providing efficient, high-quality manicures, facials, and makeup services tailored to your busy lifestyle.</p>
+      </div>
+
+      <div class="form-card">
+        <h2>Our Mission &amp; Values</h2>
+        <p><strong>Mission:</strong> To provide accessible, high-standard beauty care where every client feels confident and valued.</p>
+        <ul style="padding-left: 1.25rem; margin-top: 1rem;">
+          <li><strong>Quality &amp; Safety:</strong> Continuous professional development and medical-grade equipment hygiene.</li>
+          <li><strong>Ethical Products:</strong> Cruelty-free serums and organic skin preparations.</li>
+          <li><strong>Client Satisfaction:</strong> Tailored treatments designed around individual skin types and personal preferences.</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer style="background-color: #2C2C2C; color: #FFFFFF; text-align: center; padding: 2rem 0; margin-top: 4rem;">
+    <p>&copy; 2026 Glow &amp; Go Beauty Studio. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const primaryNav = document.querySelector('.primary-nav');
+    navToggle.addEventListener('click', () => {
+      const isVisible = primaryNav.getAttribute('data-visible') === 'true';
+      primaryNav.setAttribute('data-visible', !isVisible);
+      navToggle.setAttribute('aria-expanded', !isVisible);
+    });
+  </script>
+</body>
+</html>
