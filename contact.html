@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Glow &amp; Go Beauty Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">Glow &amp; Go <span>Studio</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle Menu">&#9776;</button>
+      <nav class="primary-nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="enquiry.html" class="nav-link">Enquiry</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contact Content -->
+  <main class="container">
+    <section>
+      <h1>Contact Us</h1>
+      <p>We would love to hear from you. Contact Glow &amp; Go Beauty Studio for appointments or general enquiries.</p>
+
+      <div class="grid-2-col" style="margin-top: 2rem;">
+        
+        <!-- Studio Location Info -->
+        <div class="form-card">
+          <h2>Visit Our Studio</h2>
+          <br>
+          <p><strong>Location:</strong> Pretoria, Gauteng, South Africa</p>
+          <p><strong>Phone:</strong> 012 345 6789</p>
+          <p><strong>Email:</strong> info@glowandgobeauty.co.za</p>
+
+          <h3 style="margin-top: 1.5rem;">Opening Hours</h3>
+          <p style="margin-bottom: 0.25rem;"><strong>Monday - Friday:</strong> 08:00 - 17:00</p>
+          <p style="margin-bottom: 0.25rem;"><strong>Saturday:</strong> 09:00 - 15:00</p>
+          <p><strong>Sunday:</strong> Closed</p>
+        </div>
+
+        <!-- Contact Message Form -->
+        <div class="form-card">
+          <h2>Send a Direct Message</h2>
+          <form action="#" method="post" style="margin-top: 1rem;">
+            <div class="form-group">
+              <label for="cName">Your Name *</label>
+              <input type="text" id="cName" name="cName" required placeholder="Enter your name">
+            </div>
+
+            <div class="form-group">
+              <label for="cEmail">Your Email *</label>
+              <input type="email" id="cEmail" name="cEmail" required placeholder="Enter your email">
+            </div>
+
+            <div class="form-group">
+              <label for="cMsg">Message *</label>
+              <textarea id="cMsg" name="cMsg" rows="4" required placeholder="Type your message here..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer style="background-color: #2C2C2C; color: #FFFFFF; text-align: center; padding: 2rem 0; margin-top: 4rem;">
+    <p>&copy; 2026 Glow &amp; Go Beauty Studio. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const primaryNav = document.querySelector('.primary-nav');
+    navToggle.addEventListener('click', () => {
+      const isVisible = primaryNav.getAttribute('data-visible') === 'true';
+      primaryNav.setAttribute('data-visible', !isVisible);
+      navToggle.setAttribute('aria-expanded', !isVisible);
+    });
+  </script>
+</body>
+</html>
